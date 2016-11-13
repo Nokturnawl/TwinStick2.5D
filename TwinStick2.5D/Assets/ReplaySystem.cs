@@ -3,21 +3,27 @@ using System.Collections;
 
 public class ReplaySystem : MonoBehaviour {
 
-	private const int bufferFrames = 100;
+	private const int bufferFrames = 1000;
 	private MyKeyFrame[] keyFrames = new MyKeyFrame[bufferFrames];
 	private Rigidbody rigidBody;
+	private GameManager myGameManager;
 
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody> ();
+		myGameManager = GameObject.FindObjectOfType<GameManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Record ();
+		if (myGameManager.recording) {
+			Record ();
+		} else {
+			PlayBack ();
+		}
 	}
 
-	void PlayBack () {
+	public void PlayBack () {
 		rigidBody.isKinematic = true;
 		int frame = Time.frameCount % bufferFrames;
 		print ("Reading frame " + frame);
