@@ -45,10 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Camera\CameraPan.cs" />
      <Compile Include="Assets\GAME\GameManager.cs" />
      <Compile Include="Assets\GAME\PlayerPrefsManager.cs" />
      <Compile Include="Assets\GAME\ReplaySystem.cs" />
      <Compile Include="Assets\Player\Player.cs" />
+     <Compile Include="Assets\SelfieStick.cs" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
